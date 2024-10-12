@@ -1,0 +1,283 @@
+.button-container {
+  position: absolute; /* Đặt vị trí cho container */
+  top: 50px; /* Khoảng cách từ trên cùng */
+  left: 20px; /* Khoảng cách từ bên phải */
+}
+
+button {
+  background-color: #444; /* Màu nền cho button */
+  color: white; /* Màu chữ cho button */
+  border: none; /* Bỏ viền */
+  padding: 20px 25px; /* Khoảng cách bên trong button */
+  cursor: pointer; /* Con trỏ khi hover */
+  border-radius: 5px; /* Bo tròn góc */
+  font-size: 16px; /* Kích thước chữ */
+  transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển tiếp */
+}
+
+/* Hiệu ứng hover */
+button:hover {
+  background-color: #666; /* Màu nền khi hover */
+  transform: translateY(-2px); /* Nâng nút lên khi hover */
+}
+
+/* Hiệu ứng focus */
+button:focus {
+  outline: none; /* Bỏ viền khi nút được focus */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Hiệu ứng bóng khi focus */
+}
+
+/* Hiệu ứng nhấn */
+button:active {
+  transform: translateY(0); /* Đưa nút về vị trí ban đầu khi nhấn */
+}
+  
+  .dropdown {
+    border: 1px solid #ccc; /* Màu viền cho dropdown */
+    background-color: #222; /* Màu nền cho dropdown */
+    position: absolute;
+    margin-top: 5px;
+    width: 115px; /* Chiều rộng dropdown */
+  }
+  
+  .dropdown div {
+    padding: 8px;
+    color: white; /* Màu chữ cho lựa chọn */
+    cursor: pointer;
+  }
+  
+  .dropdown div:hover {
+    background-color: #444; /* Màu nền khi hover trên lựa chọn */
+  }
+  
+  
+  .table-wrap {
+    display: flex;
+    justify-self: space-between;
+    padding: 50px 0 50px 20px;
+    filter: drop-shadow(0px 0px 20px rgb(240, 228, 146));
+    background: url("https://static.vecteezy.com/system/resources/previews/038/929/459/non_2x/ai-generated-old-paper-canvas-texture-grunge-background-photo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .table {
+    border: 1px solid #debe89;
+
+  }
+
+  .table, .plate-wrap {
+    width: 40vw;
+    height: 40vw;
+    margin: auto;
+    background-color: #ffffff85;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .plate-wrap {
+    position: absolute;
+    background-color: transparent;
+    transform: rotate(calc(var(--idx)*72deg));
+  }
+
+
+  .table .plate-wrap .plate {
+    width: 27%;
+    height: 27%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #69750278;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    border: 3px solid grey;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .table .plate-wrap .plate::before {
+    content: " ";
+    position: absolute;
+    top: 80px;
+    left: -20%;
+    width: 5px;
+    height: 100%;
+    background: rgb(88, 0, 0);
+    border-radius: 5px;
+    transform: rotate(-40deg);
+  }
+  .eating {
+    background-color: green !important;
+    border: 3px solid darkgreen;
+  }
+
+  .state-promt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 100%;
+    margin: 0 40px;
+  }
+ 
+
+  .panel {
+    width: inherit;
+    height: auto;
+  }
+
+  .state {
+    width: inherit;
+    height: 200px;
+    background: #ffffff25;
+    --webkit-backdrop-filter: blur(50px);
+    filter: drop-shadow(0px 0px 10px #ebe1e1e8);
+    box-shadow: 0 0 5px #fff;
+    overflow: hidden;
+    display: flex;
+    font-size: 1.3em;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid #ffff;
+  }
+
+  .state-image {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+  .state-image img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    height: auto;
+  }
+
+  .state-infos {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: black;
+  }
+
+.code-container {
+  animation: fade 0.1s ease-in-out;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  display: none;
+}
+
+.code-container.active {
+  display: block;
+}
+
+.code-container pre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .8); 
+  color: #ffffff; 
+  overflow-y: auto; 
+  z-index: 1000;
+  padding: 80px;
+  font-size: 1.5em;
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+  transform: translateZ(0); 
+  backface-visibility: hidden;
+}
+
+@keyframes fade {
+  from {
+    opacity:  0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.run-main {
+  position: fixed;
+  top: 50px;
+  left: 150px;
+  cursor: pointer;
+}
+
+
+
+/* Modal CSS */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.8); /* Nền sáng với độ trong suốt */
+}
+
+.modal-content {
+  background-color: #ffffff; /* Nền trắng cho nội dung modal */
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 8px; /* Bo tròn các góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+  width: 80%; /* Chiều rộng của modal */
+  max-width: 600px; /* Giới hạn chiều rộng tối đa */
+}
+
+.close {
+  color: #000000; /* Màu đen cho biểu tượng đóng */
+  float: right;
+  font-size: 32px; /* Kích thước lớn hơn cho biểu tượng đóng */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff0000; /* Màu đỏ khi hover */
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px; /* Kích thước chữ tiêu đề lớn hơn */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+  color: #000000; /* Màu đen cho tiêu đề */
+}
+
+pre {
+  font-size: 18px; /* Kích thước chữ trong kết quả lớn hơn */
+  white-space: pre-wrap; /* Giữ định dạng dòng */
+  word-wrap: break-word; /* Ngắt từ nếu cần */
+  background-color: #f4f4f4; /* Màu nền cho phần mã */
+  color: #000000; /* Màu đen cho văn bản */
+  padding: 15px; /* Padding cho phần mã */
+  border-radius: 4px; /* Bo tròn các góc */
+  overflow: auto; /* Cuộn nếu nội dung quá dài */
+}
+
+
+
+
+

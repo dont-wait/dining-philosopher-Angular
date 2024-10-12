@@ -1,0 +1,82 @@
+<div class="table-wrap">
+  <div class="table">
+    <!-- Corrected plate-wrap structure -->
+    <div class="plate-wrap" style="--idx: 0">
+      <div class="plate">0</div>
+    </div>
+
+    <div class="plate-wrap" style="--idx: 1">
+      <div class="plate">1</div>
+    </div>
+
+    <div class="plate-wrap" style="--idx: 2">
+      <div class="plate">2</div>
+    </div>
+
+    <div class="plate-wrap" style="--idx: 3">
+      <div class="plate">3</div>
+    </div>
+
+    <div class="plate-wrap" style="--idx: 4">
+      <div class="plate">4</div>
+    </div>
+  </div>
+
+  <div class="state-prompt">
+    <div class="panel">
+      <div class="state" *ngFor="let philosopher of philosophers">
+        <div class="state-image">
+          <img [src]="philosopher.image" alt="Philosopher {{ philosopher.id }}">
+        </div>
+        <div class="state-infos">
+          <div class="state-id">
+            <h3>No. {{ philosopher.id}}</h3>
+          </div>
+          <div class="state-type">
+            <span>State: {{ philosopher.state }}</span>
+          </div>
+          <div class="state-time">
+            <span>Time: {{ philosopher.time }}</span>
+          </div>
+        </div>
+        </div>
+        </div>
+
+    <!-- Dropdown Button -->
+    <div class="button-container">
+      <button (click)="toggleDropdown()">Lựa chọn</button>
+      <div *ngIf="isOpen" class="dropdown">
+        <div (click)="selectOption('mutex_lock')">Mutex Lock</div>
+        <div (click)="selectOption('Semaphore')">Semaphore</div>
+        </div>
+        </div>
+
+    <!-- Code Container -->
+    <div class="code-container" id="code-container">
+      <ng-container *ngIf="selectionOption === 'mutex_lock'; else semaphoreTemplate">
+        <pre (click)="removeActive()"><code>{{ code }}</code></pre>
+      </ng-container>
+      
+      <ng-template #semaphoreTemplate>
+        <div *ngIf="selectionOption === 'Semaphore'">
+          <pre (click)="removeActive()"><code>{{ code }}</code></pre>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Run Algorithm -->
+  <div class="run-main">
+    <button (click)="runAlgorithm()">Chạy thuật toán</button>
+  </div>
+  
+  
+  
+  <!-- Modal for Results -->
+  <div *ngIf="showResultModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeResultModal()">&times;</span>
+      <h2>Kết quả</h2>
+      <pre>{{ result }}</pre>
+    </div>
+  </div>
